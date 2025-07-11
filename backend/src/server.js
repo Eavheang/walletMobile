@@ -15,6 +15,9 @@ const PORT = process.env.PORT || 5001;
 
 app.use("/api/transactions", transactionsRoute)
 
+app.use("/", (req, res) => {
+    res.send("Hello World");
+})
 
 initDB().then(() => {
     app.listen(PORT, () => {

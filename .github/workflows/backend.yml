@@ -1,0 +1,35 @@
+name: Backend CI
+
+on:
+  push:
+    paths:
+      - 'backend/**'
+  pull_request:
+    paths:
+      - 'backend/**'
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' # Match your local dev Node.js version
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Check for successful build (no tests)
+        run: echo "Backend setup complete ✅"
+
+      # Optional: Start server in dev mode for verification (e.g. for E2E tests)
+      # - name: Run dev server (optional)
+      #   run: npm run dev

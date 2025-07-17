@@ -13,5 +13,5 @@
     "**/*.tsx",
     ".expo/types/**/*.ts",
     "expo-env.d.ts"
-, "hooks/useTransaction.js"  ]
+, "hooks/useTransaction.js", "app/(root)/create.jsx", "app/(root)/index.jsx"  ]
 }
